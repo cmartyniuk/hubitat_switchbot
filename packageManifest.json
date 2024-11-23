@@ -93,7 +93,7 @@
       "id": "d171c8fe-3362-445c-9fd6-f461bc694e73",
       "name": "SwitchBot Water Leak Detector",
       "namespace": "tomw",
-      "location": "https://raw.githubusercontent.com/tomwpublic/hubitat_switchbot/main/switchbotWaterLeakDetector",
+      "location": "https://raw.githubusercontent.com/tomwpublic/hubitat_switchbot/main/switchbotWaterDetector",
       "required": false
     }
   ],

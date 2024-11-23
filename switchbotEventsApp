@@ -18,6 +18,7 @@ limitations under the License.
 
 Change history:
 
+0.9.23 - cmartyniuk - added water leak detector 
 0.9.21 - tomw -
     Added temperature and humidity support for Hub 2 (as SwitchBot Meter child).
     Added Indoor/Outdoor Thermo-Hygrometer (in SwitchBot Meter driver).
@@ -162,11 +163,11 @@ def processEvent(eventMap)
     logDebug("incoming event: ${eventMap}")
     
     if("changeReport" != eventMap?.eventType) { return }
-    
+
     // check whether we know about this type of device
-    def devTypeInfo = deviceTypesMap.getAt(eventMap.context.deviceType)    
+    def devTypeInfo = deviceTypesMap.getAt(eventMap.context.deviceType)        
     if(!devTypeInfo) { return }
-    
+
     // build the event that we'll pass to the driver
     def newEvent = [:]
     
@@ -194,6 +195,7 @@ import groovy.transform.Field
 
 @Field deviceTypesMap =
     [
+        "Water Detector": [name: "Water Detector", attrs: waterDetectorAttrsMap],
         WoContact: [name: "Contact Sensor", attrs: contactSensorAttrsMap],
         WoLock: [name: "Smart Lock"],
         WoMeter: [name: "Meter"],
@@ -224,6 +226,11 @@ static @Field contactSensorAttrsMap =
 static @Field motionSensorAttrsMap =
     [
         detectionState: "moveDetected"
+    ]
+
+static @Field waterDetectorAttrsMap =
+    [
+        detectionState: "status"
     ]
 
 

@@ -18,6 +18,7 @@ limitations under the License.
 
 Change history:
 
+0.9.23 - cmartyniuk - added water leak detector 
 0.9.21 - tomw -
     Added temperature, humidity, and lightLevel support for Hub 2 (in SwitchBot Meter driver).
     Added Indoor/Outdoor Thermo-Hygrometer (in SwitchBot Meter driver).
@@ -294,7 +295,7 @@ def createChildDevice(name, id, deviceType)
 {
     try
     {
-        def customDevTypes = ["Bot", "Curtain", "Meter", "IR Device", "Humidifier", "Strip Light", "Smart Lock", "Motion Sensor", "Contact Sensor", "Plug Mini", "Blind Tilt"]
+        def customDevTypes = ["Bot", "Curtain", "Meter", "IR Device", "Humidifier", "Strip Light", "Smart Lock", "Motion Sensor", "Contact Sensor", "Water Detector", "Plug Mini", "Blind Tilt"]
         def genericDevTypes = []
         
         deviceType = deviceType.toString()
